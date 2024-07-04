@@ -1,0 +1,19 @@
+name: Reusable workflow example
+on:
+  workflow_call:
+    inputs:
+      input1:
+        Required: true
+        type: string
+    outputs:
+      description: "The first output string"
+      value: ${{ jobs.example_job.outputs.output1}}
+
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    outputs:
+      output1: ${{steps.step1.outputs.result}}
+    steps:
+    - id: step1
+      run: echo "result= `expr ${{inputs.input1}} + 10`" >> $GITHUB_OUTPUT
