@@ -1,3 +1,6 @@
+name: artifact-practice
+on: [push, pull request]
+
 jobs:
   upload-job:
     name: Save output
