@@ -5,7 +5,8 @@ jobs:
   job1:
     uses: ydg0724/test/.github/workflows/reusable-workflow.yml@main
     with:
-      input1: 10
+      input1: hello
+      input2: world
 
   job2:
     runs-on: ubuntu-latest
