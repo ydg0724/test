@@ -3,7 +3,7 @@ on:
   workflow_call:
     inputs:
       input1:
-        Required: true
+        required: true
         type: string
     outputs:
       output1:
